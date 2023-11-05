@@ -32,7 +32,8 @@ Medical Problem:
 // dotenv.config(); -- dev only
 
 const api = new BingChat({
-  cookie: process.env.BING_COOKIE ? process.env.BING_COOKIE: ""
+  //This is a public cookie. Do not be afraid! 
+  cookie: "1fdHx0NghLq2PJEiT3hBh46slVKSPvCVlukF4sxzFQAbJ3jjyR9he4UpNQ3QJ5UyR3EsAapQHuYf30ioik3hMhZnBQ1Kk06-mH9fN5Z4YrqgJT08PeF-NQx5mcr2Pi7xYpXwKZO0roh6bu82YNTf-MYhmHE81k4DGYAT25LcUYHlj3M6xi_VUaaqa_JWQJGpk7eQUxGK8kJISEorIXjfbpS8sbOjZxPAYdD1FkziUiVE"
 });
 
 const askMed = async (req: any, res: any) => {
@@ -40,7 +41,7 @@ const askMed = async (req: any, res: any) => {
       return res.status(405).json({ error: "Method Not Allowed" });
     }
   
-    var variant = process.env.BING_VARIANT;
+    var variant = "Precise";
     var prompt: string = searchPrompt
                         .replace("MEDICAL_ISSUE", req.body.MEDICAL_ISSUE);
   
