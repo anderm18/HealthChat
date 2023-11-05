@@ -1,6 +1,7 @@
 import {Box, Button, CircularProgress, Typography} from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import dynamic from 'next/dynamic';
+import SearchBubble from '../components/SearchBubble'
 import { ComponentType, useEffect, useRef, useState } from 'react';
 import React from 'react';
 import BubInit from '../components/InitialBubble';
@@ -22,7 +23,7 @@ const QUESTION_STRING =
 I am an AI tool developed to search the web and generate the best possible response based on the info I can find. Please see
 a Physician for an official diagnosis or medical advice!`
 
-const SEARCH_STRING = `ai_internal_search`
+const SEARCH_STRING = `__ai_internal_search`
 
 const DISCLAIMER = `Remember, this is not a diagnosis. I am a AI tool. Please seek a medical professional for an accurate medical advice and diagnoses.
 Is there anything else I can help you with? Just say: "Find me a doctor" or "I have a question."`
@@ -30,7 +31,7 @@ Is there anything else I can help you with? Just say: "Find me a doctor" or "I h
 const NO_UNDERSTAND =
 `Sorry, I don't understand. What would you like to do? You can ask a question or find a physician. Just say "Question" or "Find".`
 
-const callAPI = async (body: Object, endpoint: string) => {
+export const callAPI = async (body: Object, endpoint: string) => {
     return fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -102,7 +103,7 @@ export default function Dashnoard() {
                 setUserInput((inps: any) => [...inps, [QUESTION_STRING]]);
                 setIsAiTurn(true);
             } else if (holdText.toLowerCase().includes("find") || holdText.toLowerCase().includes("search")) {
-                //setUserInput((inps) => [...inps, NO_UNDERSTAND]);
+                setUserInput((inps: any) => [...inps, [SEARCH_STRING]]);
             } else {
                 setUserInput((inps: any) => [...inps, [NO_UNDERSTAND]]);
             }
@@ -138,7 +139,8 @@ export default function Dashnoard() {
                     {
                         userInput.map((inp: any, index: number) => {
                             const agent = index%2!=0 ? "ai" : "person";
-                            return <BubInit agent={agent} desc={inp}/>
+                            
+                            return !(agent == "ai" && inp[0] == SEARCH_STRING) ? <BubInit agent={agent} desc={inp}/> : <SearchBubble/>
                         })
                     }
                     {showLoad && 
