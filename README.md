@@ -1,6 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### HealthChat
+##### An AI engine to search the web and generate instant results aiming to connect doctors with patients.
 
-## Getting Started
 
 First, run the development server:
 

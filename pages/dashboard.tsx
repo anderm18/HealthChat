@@ -1,8 +1,7 @@
-import {Box, Button, CircularProgress, Typography} from '@mui/material';
+import {Box, CircularProgress, Typography} from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import dynamic from 'next/dynamic';
 import SearchBubble from '../components/SearchBubble'
-import { ComponentType, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import React from 'react';
 import BubInit from '../components/InitialBubble';
 
