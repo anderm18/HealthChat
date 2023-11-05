@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import {Box, CircularProgress, Typography} from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import SearchBubble from '../components/SearchBubble'

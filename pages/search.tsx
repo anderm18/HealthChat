@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import React, { useState } from "react";
 import BubInit from '../components/InitialBubble';
