@@ -17,8 +17,11 @@ export default function Home() {
         <Typography align="center" variant='h3' sx={{paddingTop: '100px', fontWeight: 'bold'}}>
             Connecting <div style={{color: '#3399FF'}}>Patients</div>To<div style={{color: '#3399FF'}}>Physicians</div>
         </Typography>
+        <Typography align="center" variant='h5' sx={{paddingTop: '20px', maxWidth: '10cm', margin: 'auto'}}>
+            Using AI to connect you to a physician in your area to address your health concerns!
+        </Typography>
         <Typography align="center" sx={{paddingTop: '20px'}}>
-          <Button variant='contained'>
+          <Button variant='contained' href="/dashboard">
             Get Started
           </Button>
         </Typography>
@@ -26,7 +29,7 @@ export default function Home() {
       <Box sx={{position: 'absolute', bottom: 0, height: '70px', width: '100vw'}}>
         <Box sx={{position: 'relative', backgroundColor: '#0a0c0f', height: '50px', borderRadius: '25px', marginLeft: '20px', marginRight: '20px'}}>
           <Typography sx={{paddingTop: '11px', marginLeft: '25px'}}>
-            <Typer strings={['My back hurts...', "There's a bump on my skin...", "My vision is blurred..."]}/>
+            <Typer strings={['My back hurts...', "There's a bump on my skin...", "My stomach hurts..."]}/>
           </Typography>
           <Box sx={{position: 'absolute', right: 0, marginTop: '-23px', marginRight: '15px'}}>
             <SendIcon/>
