@@ -9,7 +9,7 @@ Medical Problem:
   
   Search the Mayo Clinic and other repuatable medical sources to try to come up with what might be causing this symptom(s)/problem(s).
 
-  Please do not respond with any symbols, only plaintext. If you must link a site, only respond with the link's url. The question may not fill every section of the below JSON and that is ok, sometimes a general description is all that is needed.
+  Please do not respond with any symbols or markdown/special characters, only plaintext. If you must link a site, only respond with the link's url. The question may not fill every section of the below JSON and that is ok, sometimes a general description is all that is needed.
   Fill in this JSON (possibles is a list of possible issues that might be causing it, an example possible object is shown) as your response, and respond with only the filled out JSON form below. Nothing else. Try to fill as many possibles and as much info in the JSON as you can:
   
   {
@@ -43,7 +43,7 @@ export default async (req: any, res: any) => {
   var variant = process.env.BING_VARIANT;
   var prompt: string = searchPrompt
                       .replace("MEDICAL_ISSUE", req.body.MEDICAL_ISSUE);
-  console.log(prompt);
+                      
   try {
     const ret = await api.sendMessage(prompt, { variant });
     res.json(JSON.parse(ret.text));

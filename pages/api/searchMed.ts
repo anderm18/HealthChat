@@ -51,7 +51,7 @@ export default async (req: any, res: any) => {
                       .replace("CITY", req.body.CITY)
                       .replace("STATE", req.body.STATE)
                       .replace("INSURANCE", req.body.INSURANCE ? req.body.INSURANCE : "any");
-  console.log(prompt);
+
   try {
     const ret = await api.sendMessage(prompt, { variant });
     res.json(JSON.parse(ret.text));
