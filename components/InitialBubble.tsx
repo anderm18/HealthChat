@@ -3,13 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import { Person } from '@mui/icons-material';
-import ReactMarkdown from 'react-markdown';
 
 
 export default function BubInit(props: any) {
 
     const [isVisible, setIsVisible] = useState(false);
-    const [isServer, setIsServer] = useState(true);
 
     useEffect(() => {
         setIsVisible(true);

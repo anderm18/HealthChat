@@ -40,7 +40,7 @@ const api = new BingChat({
   cookie: process.env.BING_COOKIE ? process.env.BING_COOKIE: ""
 });
 
-export default async (req: any, res: any) => {
+const searchMed = async (req: any, res: any) => {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
@@ -59,3 +59,5 @@ export default async (req: any, res: any) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export default searchMed;

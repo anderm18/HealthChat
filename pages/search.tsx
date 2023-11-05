@@ -167,7 +167,7 @@ export default function SearchPage() {
                     }
                 </Typography>
                 <Typography align="center">
-                    {showBub && <BubInit agent="ai" desc={bubText}/>}
+                    {showBub && <BubInit key={0} agent="ai" desc={bubText}/>}
                 </Typography>
             </Box>
         </Box>

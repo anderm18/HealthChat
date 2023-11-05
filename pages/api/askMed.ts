@@ -35,19 +35,21 @@ const api = new BingChat({
   cookie: process.env.BING_COOKIE ? process.env.BING_COOKIE: ""
 });
 
-export default async (req: any, res: any) => {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method Not Allowed" });
-  }
-
-  var variant = process.env.BING_VARIANT;
-  var prompt: string = searchPrompt
-                      .replace("MEDICAL_ISSUE", req.body.MEDICAL_ISSUE);
-                      
-  try {
-    const ret = await api.sendMessage(prompt, { variant });
-    res.json(JSON.parse(ret.text));
-  } catch (err: any) {
-    res.status(500).json({ error: err.message });
-  }
+const askMed = async (req: any, res: any) => {
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Method Not Allowed" });
+    }
+  
+    var variant = process.env.BING_VARIANT;
+    var prompt: string = searchPrompt
+                        .replace("MEDICAL_ISSUE", req.body.MEDICAL_ISSUE);
+  
+    try {
+      const ret = await api.sendMessage(prompt, { variant });
+      res.json(JSON.parse(ret.text));
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
 };
+
+export default askMed;

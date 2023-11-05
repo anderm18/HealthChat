@@ -139,7 +139,7 @@ export default function Dashnoard() {
                         userInput.map((inp: any, index: number) => {
                             const agent = index%2!=0 ? "ai" : "person";
                             
-                            return !(agent == "ai" && inp[0] == SEARCH_STRING) ? <BubInit agent={agent} desc={inp}/> : <SearchBubble/>
+                            return !(agent == "ai" && inp[0] == SEARCH_STRING) ? <BubInit key={index} agent={agent} desc={inp}/> : <SearchBubble key={index}/>
                         })
                     }
                     {showLoad && 

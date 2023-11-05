@@ -5,13 +5,14 @@ import { useEffect, useState } from "react";
 
 
 
-export default function searchBubble() {
+export default function SearchBubble() {
     const [isVisible, setIsVisible] = useState(false);
-    const [isServer, setIsServer] = useState(true);
 
     useEffect(() => {
         setIsVisible(true);
     }, []);
+
+    
 
     return(
         <Box sx={{width: '100vw'}} style={{opacity: `${isVisible ? '1' : '0'}`, transition: 'opacity 1.0s ease-in-out'}}>
