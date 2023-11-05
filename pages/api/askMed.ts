@@ -1,5 +1,5 @@
 import { BingChat } from "bing-chat-rnz";
-import dotenv from "dotenv";
+// import dotenv from "dotenv"; -- dev only
 
 const searchPrompt = 
 `
@@ -29,7 +29,7 @@ Medical Problem:
   }
 `;
 
-dotenv.config();
+// dotenv.config(); -- dev only
 
 const api = new BingChat({
   cookie: process.env.BING_COOKIE ? process.env.BING_COOKIE: ""
