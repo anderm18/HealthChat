@@ -1,7 +1,16 @@
-### HealthChat
-##### An AI engine to search the web and generate instant results aiming to connect doctors with patients.
+# HealthChat
+### An AI engine to search the web and generate instant results aiming to connect doctors with patients.
+
+HealthChat is a Web application that can be used across any device. It's goal is to offer medical information assistance to those in new or different areas, as well as those just looking for who to see for an issue. HealthChat uses the **Bing Chat AI engine** in order to combine the power of **GPT-4** and **Bing** to search for what specialty doctor fits a patients medical issue, as well suggests possible causes.
+
+### NOTE: HealthChat should not be used to make diagnoses! It is simply to help patients better understand where and how they can get medical attention!
+
+HealthChat is different than your standard Google search. **Powered by AI, HealthChat can process natural language in order to make predictions on what might be causing you issues, and suggest who you should see if you are concerned, without you needing to search at all!**
+
+All of this is packaged nicely into a text-message format interface that is easy to pick up for all users. HealthChat was built from the ground up using **Next.js** with usability in mind!
 
 
+## Development 
 First, run the development server:
 
 ```bash
@@ -18,11 +27,25 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+[API routes] This project has two API routes:
+
+/api/askMed - POST \
+{\
+    "MEDICAL_ISSUE": string,\
+    "CITY": string,\
+    "STATE": string,\
+    "INSURANCE": string\
+}\
+\
+\
+/api/searchMed - POST \
+{\
+    "MEDICAL_ISSUE": string\
+}
+
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
@@ -33,8 +56,8 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) hosts this site
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -1,5 +1,5 @@
 import { BingChat } from "bing-chat-rnz";
-// import dotenv from "dotenv"; -- dev only
+import dotenv from "dotenv"; 
 
 const searchPrompt = 
 `
@@ -29,11 +29,11 @@ Medical Problem:
   }
 `;
 
-// dotenv.config(); -- dev only
+dotenv.config();
 
 const api = new BingChat({
   //This is a public cookie. Do not be afraid! 
-  cookie: "1fdHx0NghLq2PJEiT3hBh46slVKSPvCVlukF4sxzFQAbJ3jjyR9he4UpNQ3QJ5UyR3EsAapQHuYf30ioik3hMhZnBQ1Kk06-mH9fN5Z4YrqgJT08PeF-NQx5mcr2Pi7xYpXwKZO0roh6bu82YNTf-MYhmHE81k4DGYAT25LcUYHlj3M6xi_VUaaqa_JWQJGpk7eQUxGK8kJISEorIXjfbpS8sbOjZxPAYdD1FkziUiVE"
+  cookie: process.env.BING_COOKIE
 });
 
 const askMed = async (req: any, res: any) => {
